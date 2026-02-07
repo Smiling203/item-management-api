@@ -1,166 +1,80 @@
-🛒 Item Management REST API
-A simple Spring Boot REST API for managing items.
+# Item REST API – Spring Boot Project
 
-This project demonstrates backend development skills including:
+## 📌 Project Overview
 
-RESTful API design
+This project is a simple RESTful API built using Spring Boot to manage a collection of items (similar to an e-commerce product system).
 
-Input validation
+The API allows users to:
 
-Global exception handling
+* Add a new item
+* Retrieve an item by ID
+* Validate input fields before storing data
 
-Layered architecture implementation
+The project demonstrates backend fundamentals including REST APIs, validation, service layer logic, and in-memory data handling.
 
-📌 Project Overview
-This application allows users to:
+---
 
-✅ Add new items
+## 🛠️ Tech Stack
 
-✅ Retrieve all items
+* Java 17
+* Spring Boot
+* Spring Web
+* Jakarta Validation
+* Maven
+* Swagger (API Testing)
 
-✅ Retrieve item by ID
+---
 
-✅ Handle validation errors properly
+## 📦 Features Implemented
 
-✅ Handle resource not found exceptions
+### 1. Add Item
 
-⚠️ Note: Data is stored in memory using a List. No database is connected.
+**POST** `/items`
 
-🛠 Tech Stack
-Java 17+
+Adds a new item to the system.
 
-Spring Boot
+Required Fields:
 
-Spring Web
+* name (Not Blank)
+* description (Not Blank)
+* price (Positive value)
 
-Jakarta Validation
+---
 
-Maven
+### 2. Get Item by ID
 
-Embedded Tomcat Server
+**GET** `/items/{id}`
 
-📁 Project Structure
-item-management-api
-│
-├── src/main/java/com/example/itemapi
-│   ├── controller
-│   │     └── ItemController.java
-│   ├── service
-│   │     └── ItemService.java
-│   ├── model
-│   │     └── Item.java
-│   ├── exception
-│   │     ├── ResourceNotFoundException.java
-│   │     └── GlobalExceptionHandler.java
-│   └── ItemapiApplication.java
-│
-├── src/main/resources
-│   └── application.properties
-│
-└── pom.xml
-🚀 API Endpoints
-1️⃣ Add Item
-POST /api/items
+Fetches item details by its ID.
 
-Request Body
-{
-  "name": "Laptop",
-  "description": "Gaming Laptop",
-  "price": 75000
-}
-Response
-{
-  "id": 1,
-  "name": "Laptop",
-  "description": "Gaming Laptop",
-  "price": 75000
-}
-2️⃣ Get Item By ID
-GET /api/items/{id}
+If item is not found, a proper exception message is returned.
 
-Example
-GET http://localhost:8080/api/items/1
-Response
-{
-  "id": 1,
-  "name": "Laptop",
-  "description": "Gaming Laptop",
-  "price": 75000
-}
-If the item is not found, a proper error response is returned.
+---
 
-3️⃣ Get All Items
-GET /api/items
+## 🧠 Implementation Details
 
-Response
-[
-  {
-    "id": 1,
-    "name": "Laptop",
-    "description": "Gaming Laptop",
-    "price": 75000
-  }
-]
-✅ Validation Rules
-Name must not be blank
+* Data is stored using an in-memory ArrayList.
+* IDs are auto-generated using an internal counter.
+* Input validation is handled using `@NotBlank`, `@NotNull`, and `@Positive`.
+* Clean layered architecture:
 
-Description must not be blank
+  * Controller
+  * Service
+  * Model
 
-Price must not be null
+---
 
-Price must be greater than 0
+## 🚀 How to Run the Application
 
-Validation errors are handled using GlobalExceptionHandler and return structured error responses.
+1. Clone the repository
+2. Open in IntelliJ / STS
+3. Run `ItemapiApplication.java`
+4. Access API at:
+   [http://localhost:8080](http://localhost:8080)
 
-▶️ How to Run the Application
-1️⃣ Clone the Repository
-git clone https://github.com/your-username/item-management-api.git
-2️⃣ Navigate to the Project Folder
-cd item-management-api
-3️⃣ Run the Application
-Using Maven:
+---
 
-mvn spring-boot:run
-Or run ItemapiApplication.java directly from your IDE.
+## 📬 Author
 
-🌐 Access the API
-Once the application starts:
-
-Base URL
-
-http://localhost:8080
-API Base Path
-
-http://localhost:8080/api/items
-You can test the APIs using:
-
-Postman
-
-Browser (for GET requests)
-
-🧠 Implementation Details
-Layered Architecture (Controller → Service → Model → Exception)
-
-In-memory data storage using List
-
-Auto-generated ID using counter logic
-
-RESTful API design principles followed
-
-Clean and scalable code structure
-
-🔮 Future Enhancements
-Add update and delete operations
-
-Connect to MySQL database
-
-Add pagination
-
-Implement JWT authentication
-
-Deploy to cloud platform
-
-👩‍💻 Author
 Pallavi Kattimani
-Java Backend Developer
-
+Java Backend Developer (Fresher)
