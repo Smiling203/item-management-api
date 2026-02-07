@@ -1,23 +1,32 @@
-Item Management REST API
+🛒 Item Management REST API
 A simple Spring Boot REST API for managing items.
-This project demonstrates backend development skills including RESTful API design, input validation, exception handling, and layered architecture.
 
-Project Overview
+This project demonstrates backend development skills including:
+
+RESTful API design
+
+Input validation
+
+Global exception handling
+
+Layered architecture implementation
+
+📌 Project Overview
 This application allows users to:
 
-Add new items
+✅ Add new items
 
-Retrieve all items
+✅ Retrieve all items
 
-Retrieve item by ID
+✅ Retrieve item by ID
 
-Handle validation errors properly
+✅ Handle validation errors properly
 
-Handle resource not found exceptions
+✅ Handle resource not found exceptions
 
-The data is stored in memory using a list (no database connected).
+⚠️ Note: Data is stored in memory using a List. No database is connected.
 
-Tech Stack
+🛠 Tech Stack
 Java 17+
 
 Spring Boot
@@ -30,7 +39,7 @@ Maven
 
 Embedded Tomcat Server
 
-Project Structure
+📁 Project Structure
 item-management-api
 │
 ├── src/main/java/com/example/itemapi
@@ -49,46 +58,41 @@ item-management-api
 │   └── application.properties
 │
 └── pom.xml
-API Endpoints
-1. Add Item
+🚀 API Endpoints
+1️⃣ Add Item
 POST /api/items
 
-Request Body:
-
+Request Body
 {
   "name": "Laptop",
   "description": "Gaming Laptop",
   "price": 75000
 }
-Response:
-
+Response
 {
   "id": 1,
   "name": "Laptop",
   "description": "Gaming Laptop",
   "price": 75000
 }
-2. Get Item By ID
+2️⃣ Get Item By ID
 GET /api/items/{id}
 
-Example:
-
+Example
 GET http://localhost:8080/api/items/1
-Response:
-
+Response
 {
   "id": 1,
   "name": "Laptop",
   "description": "Gaming Laptop",
   "price": 75000
 }
-If item is not found, a proper error response is returned.
+If the item is not found, a proper error response is returned.
 
-3. Get All Items
+3️⃣ Get All Items
 GET /api/items
 
-Response:
-
+Response
 [
   {
     "id": 1,
@@ -97,7 +101,7 @@ Response:
     "price": 75000
   }
 ]
-Validation Rules
+✅ Validation Rules
 Name must not be blank
 
 Description must not be blank
@@ -106,49 +110,46 @@ Price must not be null
 
 Price must be greater than 0
 
-Validation errors return structured error responses using GlobalExceptionHandler.
+Validation errors are handled using GlobalExceptionHandler and return structured error responses.
 
-How to Run the Application
-Clone the repository:
-
+▶️ How to Run the Application
+1️⃣ Clone the Repository
 git clone https://github.com/your-username/item-management-api.git
-Navigate into the project folder:
-
+2️⃣ Navigate to the Project Folder
 cd item-management-api
-Run the application:
-
+3️⃣ Run the Application
 Using Maven:
 
 mvn spring-boot:run
-Or run ItemapiApplication.java from your IDE.
+Or run ItemapiApplication.java directly from your IDE.
 
-Access the API
+🌐 Access the API
 Once the application starts:
 
-Base URL:
+Base URL
 
 http://localhost:8080
-API Base Path:
+API Base Path
 
 http://localhost:8080/api/items
-You can test using:
+You can test the APIs using:
 
 Postman
 
 Browser (for GET requests)
 
-Implementation Details
+🧠 Implementation Details
 Layered Architecture (Controller → Service → Model → Exception)
 
 In-memory data storage using List
 
-Auto-generated ID using counter
+Auto-generated ID using counter logic
 
-RESTful API standards followed
+RESTful API design principles followed
 
-Clean code structure for scalability
+Clean and scalable code structure
 
-Future Enhancements
+🔮 Future Enhancements
 Add update and delete operations
 
 Connect to MySQL database
@@ -159,6 +160,7 @@ Implement JWT authentication
 
 Deploy to cloud platform
 
-Author
+👩‍💻 Author
 Pallavi Kattimani
 Java Backend Developer
+
